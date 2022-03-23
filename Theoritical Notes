@@ -1,0 +1,16 @@
+Link to booksite: https://algs4.cs.princeton.edu/home/
+
+__________________________________________________________________________________________________________________________________
+
+Algorithm: method for solving a problem.
+Data structure: method to store information.
+
+1. data types - stack, queue, bag, union-find, priority queue
+2. sorting -  quicksort, mergesort, heapsort
+3. searching -  BST, red-black BST, hash table
+4. graphs - BFS, DFS, Prim, Kruskal, Dijkstra
+5. strings - radix sorts, tries, KMP, regexps, data compression
+6. advanced - B-tree, suffix array, maxflow
+
+__________________________________________________________________________________________________________________________________
+
