@@ -63,13 +63,17 @@ then p is connected to r.
 ****Connected components. Maximal set of objects that are mutually connected.
 ****Our algorithms will gain efficiency by maintaining connected components and using that knowledge to efficiently answer the query that's, that they're presented with.
 
-Find query- Check if two objects are in the same component.
-Union command- Replace components containing two objects with their union
+Implementing the operations:
+1. Find query- Check if two objects are in the same component.
+2. Union command- Replace components containing two objects with their union
 
 ____________________________________________________________________________________________________________________________________________________
 
 Union-find data type (API)
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+****All of that leads up to, in a programming world to specifying, a data type which is simply 
+specification of the methods that we are want to going to implement in order to solve this problem.
 
 Goal. Design efficient data structure for union-find.
 ・Number of objects N can be huge.
@@ -86,3 +90,63 @@ int count()                               - number of components
 
 ****Typical Java model, what we will do is create a class called UF that contains two methods, one to implement union, the other one to implement connected, which returns a boolean. 
 The constructor, takes SR unit, the number of objects, so that it can build data structure based on the number of objects.
+
+
+Dynamic-connectivity client:    (client = program)
+----------------------------
+・Read in number of objects N from standard input.
+・Repeat:
+– read in pair of integers from standard input
+– if they are not yet connected, connect them and print out pair
+
+____________________________________________________________________________________________________________________________________________________________________
+
+How many connected components result after performing the following sequence of union operations on a set of  10  items?
+1–2  3–4  5–6  7–8  7–9  2–8  0–5  1–9 
+
+The connected components are {0, 5, 6}, {3,4}, and {1,2,7,8,9}.
+
+______________________________________________________________________________________________________________________________________________________________________
+
+Quick-Find:
+>>>>>>>>>>>>>>>
+
+Now we'll look at our first implementation of an algorithm for solving the dynamic connectivity problem, called Quick-find. 
+This is a so called eager algorithm, for solving kind activity problem.
+
+Data structure.
+・Integer array id[] of length N.
+・Interpretation: p and q are connected iff(if and only if) they have the same id.
+
+id[]= {0 1 1 8 8 0 0 1 8 8}       
+       0 1 2 3 4 5 6 7 8 9
+0, 5 and 6 are connected
+1, 2, and 7 are connected
+3, 4, 8, and 9 are connected
+
+So that representation is, shows that they're connected. 
+And clearly, that's going to support a quick implementation of the find operation. 
+We just check the array entries to see if they're equal.
+
+|| Find. Check if p and q have the same id.
+         id[6] = 0; id[1] = 1
+         6 and 1 are not connected
+
+|| Union. To merge components containing p and q, change all entries whose id equals id[p] to id[q].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
